@@ -54,7 +54,7 @@ body {
   background: red;
   background-image: radial-gradient(brown, transparent);
   border-color: red;
-  animation: 15s red infinite;
+  /* animation: 15s red; */
   box-shadow:
     0 0 20px #111 inset,
     0 0 10px red; 
@@ -66,7 +66,7 @@ body {
   background: yellow;
   background-image: radial-gradient(orange, transparent);
   border-color:  yellow;
-  animation: 15s yellow infinite;
+  /* animation: 15s yellow; */
   box-shadow:
     0 0 20px #111 inset,
     0 0 10px yellow;
@@ -78,7 +78,7 @@ body {
   background: green;
   background-image: radial-gradient(lime, transparent);
   border-color: lime;
-  animation: 15s green infinite;
+  /* animation: 15s green; */
   box-shadow:
     0 0 20px #111 inset,
     0 0 10px lime;

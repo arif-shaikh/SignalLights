@@ -1,14 +1,14 @@
 export enum LightState {
-    RED = "RED",
-    YELLOW = "YELLOW",
-    GREEN = "GREEN"
+    red,
+    yellow,
+    green
 };
 
 export class Signal {
     state: LightState;
     defaultTimeout: number = 2000;
 
-    constructor(inState:LightState = LightState.RED) {
+    constructor(inState:LightState = LightState.red) {
         this.state = inState;
     }
 
@@ -17,15 +17,15 @@ export class Signal {
     }
 
     stop (): void {
-        if (this.state == LightState.GREEN) {
-            this.state = LightState.YELLOW;
-            setTimeout( () => this.state = LightState.RED, this.defaultTimeout);
+        if (this.state == LightState.green) {
+            this.state = LightState.yellow;
+            setTimeout( () => this.state = LightState.red, this.defaultTimeout);
         }
     }
 
     start (): void {
-        if (this.state == LightState.RED) {
-            setTimeout(() => this.state = LightState.GREEN, this.defaultTimeout);
+        if (this.state == LightState.red) {
+            setTimeout(() => this.state = LightState.green, this.defaultTimeout);
         }
     }
 
