@@ -2,19 +2,26 @@ import { json } from "body-parser";
 import express from "express";
 import {SignalHandler} from "./signalHandler"
 import {LightState } from "../shared/model/signal"
+const cors = require("cors");
+
+
 const app = express ();
 const port = 5000;
 
+app.use(cors());
+
+  
 
 let signalHandler = new SignalHandler ();
+
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ state: signalHandler.isManual,
-        north: LightState[signalHandler.signalNorth2South.state],
-        south: LightState[signalHandler.signalSouth2North.state],
-        east: LightState[signalHandler.signalEast2West.state],
-        west: LightState[signalHandler.signalWest2East.state],
+        north: signalHandler.signalNorth2South.state,
+        south: signalHandler.signalSouth2North.state,
+        east: signalHandler.signalEast2West.state,
+        west: signalHandler.signalWest2East.state,
     }));
 });
 app.get('/startnorthsouth', (req, res) => {

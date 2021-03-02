@@ -12,7 +12,7 @@ export class SignalHandler {
 
     constructor() {
         this.isManual = false;
-        this.signalTimings = 4000;
+        this.signalTimings = 6000;
         this.signalSouth2North = new Signal();
         this.signalNorth2South = new Signal();
         this.signalEast2West = new Signal();
@@ -20,16 +20,16 @@ export class SignalHandler {
 
         this.toggleFlag = false;
 
-        this.signalSouth2North.initialize(LightState.RED);
-        this.signalNorth2South.initialize(LightState.RED);
-        this.signalEast2West.initialize(LightState.GREEN);
-        this.signalWest2East.initialize(LightState.GREEN);
+        this.signalSouth2North.initialize(LightState.red);
+        this.signalNorth2South.initialize(LightState.red);
+        this.signalEast2West.initialize(LightState.green);
+        this.signalWest2East.initialize(LightState.green);
 
         this.processAll ();
     }
 
     startNorthAndSouth (){
-        if (this.signalSouth2North.state == LightState.RED) {
+        if (this.signalSouth2North.state == LightState.red) {
             this.signalSouth2North.start();
             this.signalNorth2South.start();
             this.signalEast2West.stop();
@@ -38,7 +38,7 @@ export class SignalHandler {
     }
 
     startEastAndWest (){
-        if (this.signalEast2West.state == LightState.RED) {
+        if (this.signalEast2West.state == LightState.red) {
             this.signalSouth2North.stop();
             this.signalNorth2South.stop();
             this.signalEast2West.start();
