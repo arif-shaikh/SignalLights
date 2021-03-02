@@ -52,36 +52,38 @@ body {
    top: 5px;
    left: 11px;
   background: red;
-  background-image: radial-gradient(brown, transparent);
+  
   border-color: red;
-  /* animation: 15s red; */
+  /* animation: 15s red; 
+  background-image: radial-gradient(brown, transparent);
   box-shadow:
     0 0 20px #111 inset,
-    0 0 10px red; 
+    0 0 10px red; */
 }
 
 .yellow {
    top: 71px;
   left: 11px;
   background: yellow;
-  background-image: radial-gradient(orange, transparent);
+  
   border-color:  yellow;
-  /* animation: 15s yellow; */
+  /* animation: 15s yellow;
+  background-image: radial-gradient(orange, transparent);
   box-shadow:
     0 0 20px #111 inset,
-    0 0 10px yellow;
+    0 0 10px yellow; */
 }
 
 .green {
    top: 138px;
   left: 11px;
   background: green;
-  background-image: radial-gradient(lime, transparent);
   border-color: lime;
-  /* animation: 15s green; */
+  /* animation: 15s green; 
+  background-image: radial-gradient(lime, transparent);
   box-shadow:
     0 0 20px #111 inset,
-    0 0 10px lime;
+    0 0 10px lime; */
 }
 
 @keyframes red {

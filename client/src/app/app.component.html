@@ -1,23 +1,24 @@
 <div class="trafficNorth trafficlight">
-  <div class="red  trafficlighColor"></div>
-  <div class="yellow  trafficlighColor"></div>
-  <div class="green  trafficlighColor"></div>
+  
+  <div class="red  trafficlighColor" [style.background-color] = "signalState.north == 0 ? 'red': 'black'"></div>
+  <div class="yellow  trafficlighColor" [style.background-color] = "signalState.north == 1 ? 'yellow': 'black'"></div>
+  <div class="green  trafficlighColor" [style.background-color] = "signalState.north == 2 ? 'green': 'black'"></div>
 </div>
 
 <div class="trafficSouth trafficlight">
-  <div class="red  trafficlighColor"></div>
-  <div class="yellow  trafficlighColor"></div>
-  <div class="green  trafficlighColor"></div>
+  <div class="red  trafficlighColor" [style.background-color] = "signalState.south == 0 ? 'red': 'black'"></div>
+  <div class="yellow  trafficlighColor" [style.background-color] = "signalState.south == 1 ? 'yellow': 'black'"></div>
+  <div class="green  trafficlighColor" [style.background-color] = "signalState.south == 2 ? 'green': 'black'"></div>
 </div>
 
 <div class="trafficEast trafficlight">
-  <div class="red  trafficlighColor"></div>
-  <div class="yellow  trafficlighColor"></div>
-  <div class="green  trafficlighColor"></div>
+  <div class="red  trafficlighColor" [style.background-color] = "signalState.east == 0 ? 'red': 'black'"></div>
+  <div class="yellow  trafficlighColor" [style.background-color] = "signalState.east == 1 ? 'yellow': 'black'"></div>
+  <div class="green  trafficlighColor" [style.background-color] = "signalState.east == 2 ? 'green': 'black'"></div>
 </div>
 
 <div class="trafficWest trafficlight">
-  <div class="red   trafficlighColor"></div>
-  <div class="yellow  trafficlighColor"></div>
-  <div class="green  trafficlighColor"></div>
+  <div class="red   trafficlighColor" [style.background-color] = "signalState.west == 0 ? 'red': 'black'"></div>
+  <div class="yellow  trafficlighColor" [style.background-color] = "signalState.west == 1 ? 'yellow': 'black'"></div>
+  <div class="green  trafficlighColor" [style.background-color] = "signalState.west == 2 ? 'green': 'black'"></div>
 </div>

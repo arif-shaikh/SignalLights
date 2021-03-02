@@ -2,11 +2,18 @@ import { json } from "body-parser";
 import express from "express";
 import {SignalHandler} from "./signalHandler"
 import {LightState } from "../shared/model/signal"
+const cors = require("cors");
+
+
 const app = express ();
 const port = 5000;
 
+app.use(cors());
+
+  
 
 let signalHandler = new SignalHandler ();
+
 
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');

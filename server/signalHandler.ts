@@ -12,7 +12,7 @@ export class SignalHandler {
 
     constructor() {
         this.isManual = false;
-        this.signalTimings = 4000;
+        this.signalTimings = 6000;
         this.signalSouth2North = new Signal();
         this.signalNorth2South = new Signal();
         this.signalEast2West = new Signal();
