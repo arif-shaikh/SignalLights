@@ -31,4 +31,32 @@ export class AppComponent implements OnInit{
       1000
     )
   }
+
+  startNS() {
+    this.lightService.startNS().subscribe(
+      data => console.log("called startNS"),
+      error => console.log(error)
+    );
+  }
+
+  startEW (){
+    this.lightService.startEW().subscribe(
+      data => console.log("called startEW"),
+      error => console.log(error)
+    );
+  }
+
+  manual(){
+    this.lightService.manual().subscribe(
+      data => console.log("called manual"),
+      error => console.log(error)
+    );
+  }
+
+  stopAll () {
+    this.lightService.stopAll().subscribe(
+      data => console.log("called stopAll"),
+      error => console.log(error)
+    );
+  }
 }

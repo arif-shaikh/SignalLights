@@ -1,3 +1,11 @@
+<div class="buttonLayout">
+  <button (click)="startNS()">Start NS</button>
+  <button (click)="startEW()">Start EW</button>
+  <button (click)="manual()">Manual</button>
+  <button (click)="stopAll()">Stop All</button>
+</div>
+
+<h1>North</h1>
 <div class="trafficNorth trafficlight">
   
   <div class="red  trafficlighColor" [style.background-color] = "signalState.north == 0 ? 'red': 'black'"></div>
@@ -5,18 +13,21 @@
   <div class="green  trafficlighColor" [style.background-color] = "signalState.north == 2 ? 'green': 'black'"></div>
 </div>
 
+<h1>South</h1>
 <div class="trafficSouth trafficlight">
   <div class="red  trafficlighColor" [style.background-color] = "signalState.south == 0 ? 'red': 'black'"></div>
   <div class="yellow  trafficlighColor" [style.background-color] = "signalState.south == 1 ? 'yellow': 'black'"></div>
   <div class="green  trafficlighColor" [style.background-color] = "signalState.south == 2 ? 'green': 'black'"></div>
 </div>
 
+<h1>East</h1>
 <div class="trafficEast trafficlight">
   <div class="red  trafficlighColor" [style.background-color] = "signalState.east == 0 ? 'red': 'black'"></div>
   <div class="yellow  trafficlighColor" [style.background-color] = "signalState.east == 1 ? 'yellow': 'black'"></div>
   <div class="green  trafficlighColor" [style.background-color] = "signalState.east == 2 ? 'green': 'black'"></div>
 </div>
 
+<h1>West</h1>
 <div class="trafficWest trafficlight">
   <div class="red   trafficlighColor" [style.background-color] = "signalState.west == 0 ? 'red': 'black'"></div>
   <div class="yellow  trafficlighColor" [style.background-color] = "signalState.west == 1 ? 'yellow': 'black'"></div>

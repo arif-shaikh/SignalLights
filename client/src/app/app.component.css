@@ -5,6 +5,16 @@ body {
   background-size: 100% 100%;
 }
 
+.buttonLayout {
+  flex: auto;
+  flex-direction: column;
+  width:120px;
+}
+
+button {
+  width: 100px;
+  margin: 2px;
+}
 .trafficNorth {
   position: absolute;
   right: 450px;
