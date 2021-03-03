@@ -15,6 +15,31 @@ button {
   width: 100px;
   margin: 2px;
 }
+
+.n{
+  position: absolute;
+  right: 421px;
+  top: 31px;
+}
+
+.s{
+  position: absolute;
+  right: 921px;
+  top: 407px;
+}
+
+.e{
+  position: absolute;
+  right: 925px;
+  top: 25px;
+}
+
+.w{
+  position: absolute;
+  right: 414px;
+  top: 401px;
+}
+
 .trafficNorth {
   position: absolute;
   right: 450px;
@@ -65,10 +90,10 @@ button {
   
   border-color: red;
   /* animation: 15s red; 
-  background-image: radial-gradient(brown, transparent);
+  background-image: radial-gradient(brown, transparent);*/
   box-shadow:
     0 0 20px #111 inset,
-    0 0 10px red; */
+    0 0 10px red; 
 }
 
 .yellow {
@@ -78,10 +103,10 @@ button {
   
   border-color:  yellow;
   /* animation: 15s yellow;
-  background-image: radial-gradient(orange, transparent);
+  background-image: radial-gradient(orange, transparent);*/
   box-shadow:
     0 0 20px #111 inset,
-    0 0 10px yellow; */
+    0 0 10px yellow; 
 }
 
 .green {
@@ -90,10 +115,10 @@ button {
   background: green;
   border-color: lime;
   /* animation: 15s green; 
-  background-image: radial-gradient(lime, transparent);
+  background-image: radial-gradient(lime, transparent);*/
   box-shadow:
     0 0 20px #111 inset,
-    0 0 10px lime; */
+    0 0 10px lime; 
 }
 
 @keyframes red {
