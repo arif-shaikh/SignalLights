@@ -1,5 +1,5 @@
 import { LightState, Signal } from "../shared/model/signal";
-
+ 	
 export class SignalHandler {
     isManual: Boolean;
     toggleFlag: Boolean;
@@ -10,13 +10,14 @@ export class SignalHandler {
     signalEast2West: Signal;
     signalWest2East: Signal;
 
+
     constructor() {
         this.isManual = false;
         this.signalTimings = 6000;
-        this.signalSouth2North = new Signal();
-        this.signalNorth2South = new Signal();
-        this.signalEast2West = new Signal();
-        this.signalWest2East = new Signal();
+        this.signalSouth2North = new Signal(LightState.red, 36, 38, 40);
+        this.signalNorth2South = new Signal(LightState.red, 8, 10, 12);
+        this.signalEast2West = new Signal(LightState.red, 22, 24, 26);
+        this.signalWest2East = new Signal(LightState.red, 3, 5, 7);
 
         this.toggleFlag = false;
 
@@ -24,6 +25,7 @@ export class SignalHandler {
         this.signalNorth2South.initialize(LightState.red);
         this.signalEast2West.initialize(LightState.green);
         this.signalWest2East.initialize(LightState.green);
+
 
         this.processAll ();
     }

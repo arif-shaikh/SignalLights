@@ -9,7 +9,7 @@ const app = express ();
 const port = 5000;
 
 app.use(cors());
-
+app.use(express.static("assets"));
   
 
 let signalHandler = new SignalHandler ();
@@ -25,18 +25,22 @@ app.get('/', (req, res) => {
     }));
 });
 app.get('/startnorthsouth', (req, res) => {
+    console.log ("Starting north and south");
     signalHandler.startNorthAndSouth();
     res.status(200).end();
 });
 app.get('/starteastwest', (req, res) => {
+    console.log ("starting east and west");
     signalHandler.startEastAndWest();
     res.status(200).end();
 });
 app.get('/stopall', (req, res) => {
+    console.log("stopping all");
     signalHandler.stopAll();
     res.status(200).end();
 });
 app.get('/togglemanual', (req, res) => {
+    console.log("toggle manual");
     signalHandler.toggleManual();
     res.status(200).end();
 });
