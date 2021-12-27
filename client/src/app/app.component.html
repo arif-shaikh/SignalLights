@@ -1,11 +1,29 @@
-<div class="trafficlight">
-  <div class="red"></div>
-  <div class="yellow"></div>
-  <div class="green"></div>
+<button [disabled]="isProcessing" (click)="toggleManual()">Set {{signalState?.isManual ? "Automatic":
+    "Manual"}}</button>
+<button [disabled]="isProcessing" (click)="startNorthSouth()">Start North South</button>
+<button [disabled]="isProcessing" (click)="startEastWest()">Start East West</button>
+
+<div name="North" class="trafficlight" style="top:690px; left:1400px">
+    <div [ngClass]=" { 'red': signalState?.northSouth=='RED' } "></div>
+    <div [ngClass]=" { 'yellow': signalState?.northSouth=='YELLOW' } "></div>
+    <div [ngClass]="{ 'green': signalState?.northSouth=='GREEN' } "></div>
 </div>
 
-<div class="trafficlight2">
-  <div class="red"></div>
-  <div class="yellow"></div>
-  <div class="green"></div>
+
+<div name="South" class="trafficlight" style="top:150px; left:660px">
+    <div [ngClass]=" { 'red': signalState?.northSouth=='RED' } "></div>
+    <div [ngClass]=" { 'yellow': signalState?.northSouth=='YELLOW' } "></div>
+    <div [ngClass]="{ 'green': signalState?.northSouth=='GREEN' } "></div>
+</div>
+
+<div name="East" class="trafficlight" style="top:210px; left:1460px; transform:rotate(-90deg);">
+    <div [ngClass]=" { 'red': signalState?.eastWest=='RED' } "></div>
+    <div [ngClass]=" { 'yellow': signalState?.eastWest=='YELLOW' } "></div>
+    <div [ngClass]="{ 'green': signalState?.eastWest=='GREEN' } "></div>
+</div>
+
+<div name="West" class="trafficlight" style="top:630px; left:600px; transform:rotate(90deg);">
+    <div [ngClass]=" { 'red': signalState?.eastWest=='RED' } "></div>
+    <div [ngClass]=" { 'yellow': signalState?.eastWest=='YELLOW' } "></div>
+    <div [ngClass]="{ 'green': signalState?.eastWest=='GREEN' } "></div>
 </div>

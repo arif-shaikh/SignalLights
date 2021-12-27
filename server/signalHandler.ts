@@ -5,63 +5,63 @@ export class SignalHandler {
     toggleFlag: Boolean;
 
     signalTimings: number;
-    signalSouth2North: Signal;
-    signalNorth2South: Signal;
-    signalEast2West: Signal;
-    signalWest2East: Signal;
+    signalNorthSouth: Signal;
+    signalEastWest: Signal;
 
     constructor() {
         this.isManual = false;
-        this.signalTimings = 4000;
-        this.signalSouth2North = new Signal();
-        this.signalNorth2South = new Signal();
-        this.signalEast2West = new Signal();
-        this.signalWest2East = new Signal();
+        this.signalTimings = 5000;
+        this.signalNorthSouth = new Signal();
+        this.signalEastWest = new Signal();
 
         this.toggleFlag = false;
 
-        this.signalSouth2North.initialize(LightState.RED);
-        this.signalNorth2South.initialize(LightState.RED);
-        this.signalEast2West.initialize(LightState.GREEN);
-        this.signalWest2East.initialize(LightState.GREEN);
+        this.signalNorthSouth.initialize(LightState.RED);
+        this.signalEastWest.initialize(LightState.GREEN);
 
-        this.processAll ();
+        this.processAll();
     }
 
-    startNorthAndSouth (){
-        if (this.signalSouth2North.state == LightState.RED) {
-            this.signalSouth2North.start();
-            this.signalNorth2South.start();
-            this.signalEast2West.stop();
-            this.signalWest2East.stop();
+    getState() {
+        let retState = JSON.stringify({
+            isManual: this.isManual,
+            northSouth: LightState[this.signalNorthSouth.state],
+            eastWest: LightState[this.signalEastWest.state]
+        });
+
+        console.log(retState)
+        return retState;
+    }
+
+
+    startNorthAndSouth() {
+        if (this.signalNorthSouth.state == LightState.RED) {
+            this.signalNorthSouth.start();
+            this.signalEastWest.stop();
         }
     }
 
-    startEastAndWest (){
-        if (this.signalEast2West.state == LightState.RED) {
-            this.signalSouth2North.stop();
-            this.signalNorth2South.stop();
-            this.signalEast2West.start();
-            this.signalWest2East.start();
+    startEastAndWest() {
+        if (this.signalEastWest.state == LightState.RED) {
+            this.signalNorthSouth.stop();
+            this.signalEastWest.start();
         }
     }
 
-    stopAll (){
-        this.signalSouth2North.stop();
-        this.signalNorth2South.stop();
-        this.signalEast2West.stop();
-        this.signalWest2East.stop();
+    stopAll() {
+        this.signalNorthSouth.stop();
+        this.signalEastWest.stop();
 
         this.isManual = true;
     }
 
-    processAll () {
+    processAll() {
         setInterval(() => {
             if (this.isManual == false) {
                 this.toggleFlag ?
-                    this.startNorthAndSouth():
+                    this.startNorthAndSouth() :
                     this.startEastAndWest();
-                this.toggleFlag = ! this.toggleFlag;
+                this.toggleFlag = !this.toggleFlag;
             }
         }, this.signalTimings);
     }
