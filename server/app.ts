@@ -3,6 +3,7 @@ import express from "express";
 import { SignalHandler } from "./signalHandler"
 import { LightState } from "../shared/model/signal"
 import cors from "cors";
+import * as path from 'path';
 
 const app = express();
 const port = 5000;
@@ -11,7 +12,9 @@ const port = 5000;
 let signalHandler = new SignalHandler();
 
 app.use(cors({ origin: true }));
-app.get('/', (req, res) => {
+app.use("/", express.static(path.join(__dirname, 'webcontent')));
+
+app.get('/state', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).end(signalHandler.getState())
 });

@@ -12,7 +12,7 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   getState() {
-    return this.http.get<IAppState>(this.serverUrl);
+    return this.http.get<IAppState>(this.serverUrl + '/state');
   }
   startNorthSouth() {
     return this.http.get<IAppState>(this.serverUrl + '/startnorthsouth');
